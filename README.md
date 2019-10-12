@@ -1,4 +1,4 @@
-# MHP
+# MHP Group 3-3
 Mojo FPGA- Full bit Adder: Source Code for 50.002 Computational Structures 1D Mini Hardware Project using Lucid Programming Language
 
 Make sure you have Alchitry Labs and Xilinx PlanAhead installed.
