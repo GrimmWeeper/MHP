@@ -1,0 +1,235 @@
+//Group 3-3: Wee Ping, Jeslyn, Aaron, Luo Qi, Calvin
+
+module mojo_top (
+    input clk,              // 50MHz clock
+    input rst_n,            // reset button (active low)
+    output led [8],         // 8 user controllable LEDs
+    output spi_miso,        // AVR SPI MISO
+    output spi_channel [4], // AVR general purpose pins (used by default to select ADC channel)
+    output avr_rx,          // AVR RX (FPGA TX)
+    input io_button [5],    // 5 buttons on IO Shield
+    input io_led [3][8],    // LEDs on IO Shield
+    output io_seg [8],      // 7-segment LEDs on IO Shield
+    output io_sel [4],      // Digit select on IO Shield
+    output inputA,
+    output inputB,
+    output carryin
+    
+    
+    
+
+    
+  ) {
+  
+  sig rst;                  // reset signal
+  
+  .clk(clk) {
+    reset_conditioner reset_cond;
+    .rst(rst) {
+      multi_seven_seg seg; // Instantiate the 4 digit-segments LED display module
+      fsm state = {IDLE,S0,S1,S2,S3,S4,S5,S6,S7,ERROR}; // Set up a FSM with the given states
+      dff counter[30]; // Counter used to cycle through different states 
+    }
+  } 
+  
+  const X = 27;// Constant used to control time before transitioning to next state (increase value to increase delay between states)
+    
+  always {
+    reset_cond.in = ~rst_n; // input raw inverted reset signal
+    rst = reset_cond.out;   // conditioned reset
+    
+    led = 8h00;             // turn LEDs off
+    spi_miso = bz;          // not using SPI
+    spi_channel = bzzzz;    // not using flags
+    avr_rx = bz;            // not using serial port
+    io_seg = 8hff;          // turn segments off
+    io_sel = 4hf;           // select no digits
+    
+    inputA = 0;  
+    inputB = 0;
+    carryin = 0;    
+    
+    
+    
+     
+    io_seg = ~seg.seg;      // connect segments to the driver
+    io_sel = ~seg.sel;      // connect digit select to the driver
+    seg.values = {4hf,4hf,4hf,4hf};   // turn off the 4 digits 7-segments display
+
+    case (state.q) {
+    
+        //Inputs: A(inputA, Pin 57), B(inputB, Pin 66), Carry-in(carryin, Pin 67)
+        //Outputs (Inputs for FSM): Sum(io_led[0][1], Pin 98), Carry-out(io_led[0][0], Pin 97)
+    
+        state.IDLE:
+            
+            counter.d = 0; // clock counter is 0 when in idle state
+            led[0] = 8hff;
+            seg.values = {4hf,4hf,4hf,4h9}; // Show 'r' on the rightmost 7-segment display
+            
+            if (io_button[1] == 1) {
+                state.d = state.S0;
+          }
+        
+        //S0 state: Carry-in:0, A:0, B:0
+        state.S0:
+            
+            counter.d = counter.q+1; // continually increases clock counter until delay time is over
+            inputA = 0;
+            inputB = 0;
+            carryin = 0;
+            seg.values = {4hf,4hf,4hf,4h0}; //Show '0' on the rightmost 7-segment display
+        
+            if (io_led[0][0] == 0 && io_led[0][1] == 0 && counter.q[X] == 1) {   // once counter reaches defined value, with valid outputs
+                state.d = state.S1;  // Valid result: Carry-out: 0, Sum: 0, moving on to the next state
+                counter.d = 0; // reset counter value to 0
+          }
+            else if ((io_led[0][0] != 0 || io_led[0][1] != 0) && counter.q[X] == 1) { // once counter reaches defined value, with invalid outputs
+                state.d = state.ERROR;  // Invalid result leading to the error state
+                counter.d = 0; // reset counter value to 0
+          }  
+        
+        // S1 state: Carry-in:0, A:1, B:0
+        state.S1 :
+
+            counter.d = counter.q+1;
+            inputA = 1;
+            inputB = 0;
+            carryin = 0;
+            seg.values = {4hf,4hf,4hf,4h1}; // Show '1' on the rightmost 7-segment display
+        
+            if (io_led[0][0] == 0 && io_led[0][1] != 0 && counter.q[X] == 1) {
+                state.d = state.S2;  //Valid result: Carry-out: 0, Sum: 1, moving on to the next state
+                counter.d = 0;
+          }
+            else if ((io_led[0][0] != 0 || io_led[0][1] == 0) && counter.q[X] == 1) {
+                state.d = state.ERROR;  //Invalid result leading to the error state
+                counter.d = 0;            
+          
+          }
+        
+        // S2 state: Carry-in:0, A:0, B:1
+        state.S2 :
+
+            counter.d = counter.q+1;
+            inputA = 0;
+            inputB = 1;
+            carryin = 0;
+            seg.values = {4hf,4hf,4hf,4h2}; // Show '2' on the rightmost 7-segment display
+        
+            if (io_led[0][0] == 0 && io_led[0][1] != 0 && counter.q[X] == 1) {
+                state.d = state.S3;  //Valid result: Carry-out: 0, Sum: 1, moving on to the next state
+                counter.d = 0;
+          }
+            else if ((io_led[0][0] != 0 || io_led[0][1] == 0) && counter.q[X] == 1) {
+                state.d = state.ERROR;  //Invalid result leading to the error state
+                counter.d = 0;            
+          
+          }
+
+        // S3 state: Carry-in:0, A:1, B:1
+        state.S3 :
+
+            counter.d = counter.q+1;
+            inputA = 1;
+            inputB = 1;
+            carryin = 0;
+            seg.values = {4hf,4hf,4hf,4h3}; // Show '3' on the rightmost 7-segment display
+        
+            if (io_led[0][0] != 0 && io_led[0][1] == 0 && counter.q[X] == 1) {
+                state.d = state.S4;  //Valid result: Carry-out: 1, Sum: 0, moving on to the next state
+                counter.d = 0;
+          }
+            else if ((io_led[0][0] == 0 || io_led[0][1] != 0) && counter.q[X] == 1) {
+                state.d = state.ERROR;  //Invalid result leading to the error state
+                counter.d = 0;            
+          
+          }   
+        
+        // S4 state: Carry-in:1, A:0, B:0
+        state.S4 :
+
+            counter.d = counter.q+1;
+            inputA = 0;
+            inputB = 0;
+            carryin = 1;
+            seg.values = {4hf,4hf,4hf,4h4}; // Show '4' on the rightmost 7-segment display
+        
+            if (io_led[0][0] == 0 && io_led[0][1] != 0 && counter.q[X] == 1) {
+                state.d = state.S5;  //Valid result: Carry-out: 0, Sum: 1, moving on to the next state
+                counter.d = 0;
+          }
+            else if ((io_led[0][0] != 0 || io_led[0][1] == 0) && counter.q[X] == 1) {
+                state.d = state.ERROR;  //Invalid result leading to the error state
+                counter.d = 0;            
+          
+          }
+  
+        // S5 state: Carry-in:1, A:1, B:0
+        state.S5 :
+
+            counter.d = counter.q+1;
+            inputA = 1;
+            inputB = 0;
+            carryin = 1;
+            seg.values = {4hf,4hf,4hf,4h5}; // Show '5' on the rightmost 7-segment display
+        
+            if (io_led[0][0] != 0 && io_led[0][1] == 0 && counter.q[X] == 1) {
+                state.d = state.S6;  //Valid result: Carry-out: 1, Sum: 0, moving on to the next state
+                counter.d = 0;
+          }
+            else if ((io_led[0][0] == 0 || io_led[0][1] != 0) && counter.q[X] == 1) {
+                state.d = state.ERROR;  //Invalid result leading to the error state
+                counter.d = 0;            
+          
+          }                                            
+               
+        // S6 state: Carry-in:1, A:0, B:1
+        state.S6 :
+
+            counter.d = counter.q+1;
+            inputA = 0;
+            inputB = 1;
+            carryin = 1;
+            seg.values = {4hf,4hf,4hf,4h6}; // Show '6' on the rightmost 7-segment display
+        
+            if (io_led[0][0] != 0 && io_led[0][1] == 0 && counter.q[X] == 1) {
+                state.d = state.S7;  //Valid result: Carry-out: 1, Sum: 0, moving on to the next state
+                counter.d = 0;
+          }
+            else if ((io_led[0][0] == 0 || io_led[0][1] != 0) && counter.q[X] == 1) {
+                state.d = state.ERROR;  //Invalid result leading to the error state
+                counter.d = 0;            
+          
+          }    
+      
+        // S7 state: Carry-in:1, A:1, B:1
+        state.S7 :
+
+            counter.d = counter.q+1;
+            inputA = 1;
+            inputB = 1;
+            carryin = 1;
+            seg.values = {4hf,4hf,4hf,4h7}; // Show '7' on the rightmost 7-segment display
+        
+            if (io_led[0][0] != 0 && io_led[0][1] != 0 && counter.q[X] == 1) {
+                state.d = state.IDLE;  //Valid result: Carry-out: 1, Sum: 1, moving back to the IDLE state
+                counter.d = 0;
+          }
+            else if ((io_led[0][0] == 0 || io_led[0][1] == 0) && counter.q[X] == 1) {
+                state.d = state.ERROR;  //Invalid result leading to the error state
+                counter.d = 0;            
+          
+          }
+        
+        // ERROR state (invalid outputs from any of the states will lead to this)
+        state.ERROR :
+           counter.d = counter.q+1;
+           seg.values = {4hf,4hf,4hf,4h8}; // Show 'E' on the rightmost 7-segment display
+        
+           if(counter.q[X] == 1) {
+               state.d = state.IDLE; //Change of state to IDLE state after a delay
+               counter.d = 0;
+        }
+  }
+}
