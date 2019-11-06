@@ -1,0 +1,1258 @@
+
+****** PlanAhead v14.7 (64-bit)
+  **** Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+    ** Copyright 1986-1999, 2001-2013 Xilinx, Inc. All Rights Reserved.
+
+INFO: [Common 17-78] Attempting to get a license: PlanAhead
+INFO: [Common 17-290] Got license for PlanAhead
+INFO: [Device 21-36] Loading parts and site information from D:/Programs/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
+Parsing RTL primitives file [D:/Programs/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [D:/Programs/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+source {D:\Alchitry\Full-Bit Adder MHP\work\project.tcl}
+# set projDir "D:/Alchitry/Full-Bit Adder MHP/work/planAhead"
+# set projName "MHP"
+# set topName top
+# set device xc6slx9-2tqg144
+# if {[file exists "$projDir/$projName"]} { file delete -force "$projDir/$projName" }
+# create_project $projName "$projDir/$projName" -part $device
+# set_property design_mode RTL [get_filesets sources_1]
+# set verilogSources [list "D:/Alchitry/Full-Bit\ Adder\ MHP/work/verilog/mojo_top_0.v" "D:/Alchitry/Full-Bit\ Adder\ MHP/work/verilog/reset_conditioner_1.v" "D:/Alchitry/Full-Bit\ Adder\ MHP/work/verilog/multi_seven_seg_2.v" "D:/Alchitry/Full-Bit\ Adder\ MHP/work/verilog/counter_3.v" "D:/Alchitry/Full-Bit\ Adder\ MHP/work/verilog/seven_seg_4.v" "D:/Alchitry/Full-Bit\ Adder\ MHP/work/verilog/decoder_5.v" ]
+# import_files -fileset [get_filesets sources_1] -force -norecurse $verilogSources
+# set ucfSources [list "D:/Alchitry/Full-Bit\ Adder\ MHP/constraint/io.ucf" "C:/Program\ Files/Alchitry/Alchitry\ Labs/library/components/mojo.ucf" ]
+# import_files -fileset [get_filesets constrs_1] -force -norecurse $ucfSources
+# set_property -name {steps.bitgen.args.More Options} -value {-g Binary:Yes -g Compress} -objects [get_runs impl_1]
+# set_property steps.map.args.mt on [get_runs impl_1]
+# set_property steps.map.args.pr b [get_runs impl_1]
+# set_property steps.par.args.mt on [get_runs impl_1]
+# update_compile_order -fileset sources_1
+# launch_runs -runs synth_1
+[Sat Oct 12 00:37:13 2019] Launched synth_1...
+Run output will be captured here: D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.runs/synth_1/runme.log
+# wait_on_run synth_1
+[Sat Oct 12 00:37:13 2019] Waiting for synth_1 to finish...
+
+*** Running xst
+    with args -ifn "mojo_top_0.xst" -ofn "mojo_top_0.srp" -intstyle ise
+
+Reading design: mojo_top_0.prj
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/sources_1/imports/verilog/seven_seg_4.v" into library work
+Parsing module <seven_seg_4>.
+Analyzing Verilog file "D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/sources_1/imports/verilog/decoder_5.v" into library work
+Parsing module <decoder_5>.
+Analyzing Verilog file "D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/sources_1/imports/verilog/counter_3.v" into library work
+Parsing module <counter_3>.
+Analyzing Verilog file "D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/sources_1/imports/verilog/reset_conditioner_1.v" into library work
+Parsing module <reset_conditioner_1>.
+Analyzing Verilog file "D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/sources_1/imports/verilog/multi_seven_seg_2.v" into library work
+Parsing module <multi_seven_seg_2>.
+Analyzing Verilog file "D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/sources_1/imports/verilog/mojo_top_0.v" into library work
+Parsing module <mojo_top_0>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <mojo_top_0>.
+
+Elaborating module <reset_conditioner_1>.
+
+Elaborating module <multi_seven_seg_2>.
+
+Elaborating module <counter_3>.
+
+Elaborating module <seven_seg_4>.
+
+Elaborating module <decoder_5>.
+WARNING:HDLCompiler:413 - "D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 82: Result of 8-bit expression is truncated to fit in 1-bit target.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <mojo_top_0>.
+    Related source file is "D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/sources_1/imports/verilog/mojo_top_0.v".
+WARNING:Xst:647 - Input <io_button<0:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <io_button<4:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <io_led<23:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 4-bit register for signal <M_state_q>.
+    Found 30-bit register for signal <M_counter_q>.
+    Found finite state machine <FSM_0> for signal <M_state_q>.
+    -----------------------------------------------------------------------
+    | States             | 10                                             |
+    | Transitions        | 52                                             |
+    | Inputs             | 8                                              |
+    | Outputs            | 24                                             |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | M_reset_cond_out (positive)                    |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 0000                                           |
+    | Power Up State     | 0000                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 30-bit adder for signal <M_counter_q[29]_GND_1_o_add_92_OUT> created at line 217.
+    Found 1-bit tristate buffer for signal <spi_miso> created at line 60
+    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 60
+    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 60
+    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 60
+    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 60
+    Found 1-bit tristate buffer for signal <avr_rx> created at line 60
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  30 D-type flip-flop(s).
+	inferred  16 Multiplexer(s).
+	inferred   6 Tristate(s).
+	inferred   1 Finite State Machine(s).
+Unit <mojo_top_0> synthesized.
+
+Synthesizing Unit <reset_conditioner_1>.
+    Related source file is "D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/sources_1/imports/verilog/reset_conditioner_1.v".
+    Found 4-bit register for signal <M_stage_q>.
+    Summary:
+	inferred   4 D-type flip-flop(s).
+Unit <reset_conditioner_1> synthesized.
+
+Synthesizing Unit <multi_seven_seg_2>.
+    Related source file is "D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/sources_1/imports/verilog/multi_seven_seg_2.v".
+    Found 4-bit adder for signal <M_ctr_value[1]_GND_3_o_add_0_OUT> created at line 48.
+    Found 31-bit shifter logical right for signal <n0010> created at line 48
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   1 Combinational logic shifter(s).
+Unit <multi_seven_seg_2> synthesized.
+
+Synthesizing Unit <counter_3>.
+    Related source file is "D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/sources_1/imports/verilog/counter_3.v".
+    Found 66-bit register for signal <M_ctr_q>.
+    Found 66-bit adder for signal <M_ctr_q[65]_GND_4_o_add_0_OUT> created at line 35.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  66 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <counter_3> synthesized.
+
+Synthesizing Unit <seven_seg_4>.
+    Related source file is "D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/sources_1/imports/verilog/seven_seg_4.v".
+    Found 16x7-bit Read Only RAM for signal <segs>
+    Summary:
+	inferred   1 RAM(s).
+Unit <seven_seg_4> synthesized.
+
+Synthesizing Unit <decoder_5>.
+    Related source file is "D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/sources_1/imports/verilog/decoder_5.v".
+    Summary:
+	no macro.
+Unit <decoder_5> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 16x7-bit single-port Read Only RAM                    : 1
+# Adders/Subtractors                                   : 3
+ 30-bit adder                                          : 1
+ 4-bit adder                                           : 1
+ 66-bit adder                                          : 1
+# Registers                                            : 3
+ 30-bit register                                       : 1
+ 4-bit register                                        : 1
+ 66-bit register                                       : 1
+# Multiplexers                                         : 17
+ 30-bit 2-to-1 multiplexer                             : 16
+ 66-bit 2-to-1 multiplexer                             : 1
+# Logic shifters                                       : 1
+ 31-bit shifter logical right                          : 1
+# Tristates                                            : 6
+ 1-bit tristate buffer                                 : 6
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <counter_3>.
+The following registers are absorbed into counter <M_ctr_q>: 1 register on signal <M_ctr_q>.
+Unit <counter_3> synthesized (advanced).
+
+Synthesizing (advanced) Unit <seven_seg_4>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_segs> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 7-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <char>          |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <segs>          |          |
+    -----------------------------------------------------------------------
+Unit <seven_seg_4> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 16x7-bit single-port distributed Read Only RAM        : 1
+# Adders/Subtractors                                   : 2
+ 30-bit adder                                          : 1
+ 4-bit adder                                           : 1
+# Counters                                             : 1
+ 66-bit up counter                                     : 1
+# Registers                                            : 34
+ Flip-Flops                                            : 34
+# Multiplexers                                         : 16
+ 30-bit 2-to-1 multiplexer                             : 16
+# Logic shifters                                       : 1
+ 31-bit shifter logical right                          : 1
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <FSM_0> on signal <M_state_q[1:10]> with one-hot encoding.
+---------------------
+ State | Encoding
+---------------------
+ 0000  | 0000000001
+ 0001  | 0000000010
+ 1001  | 0000000100
+ 0010  | 0000001000
+ 0011  | 0000010000
+ 0100  | 0000100000
+ 0101  | 0001000000
+ 0110  | 0010000000
+ 0111  | 0100000000
+ 1000  | 1000000000
+---------------------
+WARNING:Xst:2677 - Node <M_counter_q_28> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <M_counter_q_29> of sequential type is unconnected in block <mojo_top_0>.
+
+Optimizing unit <mojo_top_0> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 3.
+
+Final Macro Processing ...
+
+Processing Unit <mojo_top_0> :
+INFO:Xst:741 - HDL ADVISOR - A 4-bit shift register was found for signal <reset_cond/M_stage_q_3> and currently occupies 4 logic cells (2 slices). Removing the set/reset logic would take advantage of SRL32 (and derived) primitives and reduce this to 1 logic cells (1 slices). Evaluate if the set/reset can be removed for this simple shift register. The majority of simple pipeline structures do not need to be set/reset operationally.
+Unit <mojo_top_0> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 108
+ Flip-Flops                                            : 108
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 108   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 5.908ns (Maximum Frequency: 169.262MHz)
+   Minimum input arrival time before clock: 4.102ns
+   Maximum output required time after clock: 8.007ns
+   Maximum combinational path delay: No path found
+
+=========================================================================
+[Sat Oct 12 00:37:23 2019] synth_1 finished
+wait_on_run: Time (s): elapsed = 00:00:10 . Memory (MB): peak = 142.316 ; gain = 0.000
+# launch_runs -runs impl_1
+Release 14.7 - ngc2edif P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design mojo_top_0.ngc ...
+WARNING:NetListWriters:298 - No output is written to mojo_top_0.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus _n0169<10 : 1> on block mojo_top_0 is
+   not reconstructed, because there are some missing bus signals.
+  finished :Prep
+Writing EDIF netlist file mojo_top_0.edif ...
+ngc2edif: Total memory usage is 4313552 kilobytes
+
+Parsing EDIF File [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.data/cache/mojo_top_0_ngc_zx.edif]
+Finished Parsing EDIF File [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.data/cache/mojo_top_0_ngc_zx.edif]
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+Loading clock regions from D:/Programs/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx9/ClockRegion.xml
+Loading clock buffers from D:/Programs/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx9/ClockBuffers.xml
+Loading package pin functions from D:/Programs/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/PinFunctions.xml...
+Loading package from D:/Programs/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx9/tqg144/Package.xml
+Loading io standards from D:/Programs/Xilinx/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/spartan6/IOStandards.xml
+Loading device configuration modes from D:/Programs/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/ConfigModes.xml
+Loading list of drcs for the architecture : D:/Programs/Xilinx/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/spartan6/drc.xml
+Parsing UCF File [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf]
+CRITICAL WARNING: [Designutils 20-30] Unrecognized site 24 [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:28]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<23>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:43]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<23>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:43]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<23>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:43]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<22>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:44]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<22>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:44]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<22>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:44]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<21>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:45]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<21>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:45]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<21>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:45]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<20>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:46]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<20>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:46]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<20>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:46]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<19>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:47]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<19>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:47]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<19>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:47]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<18>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:48]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<18>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:48]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<18>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:48]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<17>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:49]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<17>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:49]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<17>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:49]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<16>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:50]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<16>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:50]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<16>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:50]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<15>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:52]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<15>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:52]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<15>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:52]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<14>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:53]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<14>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:53]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<14>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:53]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<13>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:54]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<13>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:54]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<13>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:54]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<12>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:55]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<12>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:55]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<12>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:55]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<11>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:56]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<11>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:56]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<11>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:56]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<10>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:57]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<10>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:57]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<10>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:57]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<9>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:58]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<9>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:58]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<9>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:58]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<8>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:59]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<8>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:59]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<8>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:59]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<7>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:61]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'io_dip<7>' [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf:61]
+INFO: [Common 17-14] Message 'Constraints 18-11' appears 50 times and further instances of the messages will be disabled. Use the Tcl command set_msg_limit to change the current settings.
+Finished Parsing UCF File [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/constraint/io.ucf]
+Parsing UCF File [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/components/mojo.ucf]
+Finished Parsing UCF File [D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.srcs/constrs_1/imports/components/mojo.ucf]
+INFO: [Designutils 20-20] Invalid constraints found, use command 'write_ucf -constraints invalid <file>' to save all the invalid constraints to a file
+[Sat Oct 12 00:37:28 2019] Launched impl_1...
+Run output will be captured here: D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.runs/impl_1/runme.log
+# wait_on_run impl_1
+[Sat Oct 12 00:37:28 2019] Waiting for impl_1 to finish...
+
+*** Running ngdbuild
+    with args -intstyle ise -p xc6slx9tqg144-2 -dd _ngo -uc "mojo_top_0.ucf" "mojo_top_0.edf"
+
+
+Command Line: D:\Programs\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe
+-intstyle ise -p xc6slx9tqg144-2 -dd _ngo -uc mojo_top_0.ucf mojo_top_0.edf
+
+Executing edif2ngd -quiet "mojo_top_0.edf" "_ngo\mojo_top_0.ngo"
+Release 14.7 - edif2ngd P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading NGO file "D:/Alchitry/Full-Bit Adder
+MHP/work/planAhead/MHP/MHP.runs/impl_1/_ngo/mojo_top_0.ngo" ...
+Gathering constraint information from source properties...
+Done.
+
+Annotating constraints to design from ucf file "mojo_top_0.ucf" ...
+Resolving constraint associations...
+Checking Constraint Associations...
+Done...
+
+Checking expanded design ...
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   0
+
+Writing NGD file "mojo_top_0.ngd" ...
+Total REAL time to NGDBUILD completion:  5 sec
+Total CPU time to NGDBUILD completion:   2 sec
+
+Writing NGDBUILD log file "mojo_top_0.bld"...
+
+NGDBUILD done.
+
+*** Running map
+    with args -intstyle pa -w -pr b -mt on "mojo_top_0.ngd"
+
+Using target part "6slx9tqg144-2".
+INFO:Map:284 - Map is running with the multi-threading option on. Map currently
+   supports the use of up to 2 processors. Based on the the user options and
+   machine load, Map will use 2 processors during this run.
+Mapping design into LUTs...
+WARNING:MapLib:701 - Signal spi_channel[3] connected to top level port
+   spi_channel(3) has been removed.
+WARNING:MapLib:701 - Signal spi_channel[2] connected to top level port
+   spi_channel(2) has been removed.
+WARNING:MapLib:701 - Signal spi_channel[1] connected to top level port
+   spi_channel(1) has been removed.
+WARNING:MapLib:701 - Signal spi_channel[0] connected to top level port
+   spi_channel(0) has been removed.
+WARNING:MapLib:701 - Signal spi_miso connected to top level port spi_miso has
+   been removed.
+WARNING:MapLib:701 - Signal avr_rx connected to top level port avr_rx has been
+   removed.
+Running directed packing...
+Running delay-based LUT packing...
+Updating timing models...
+INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
+   (.mrp).
+Running timing-driven placement...
+Total REAL time at the beginning of Placer: 3 secs 
+Total CPU  time at the beginning of Placer: 3 secs 
+
+Phase 1.1  Initial Placement Analysis
+Phase 1.1  Initial Placement Analysis (Checksum:dbf17154) REAL time: 3 secs 
+
+Phase 2.7  Design Feasibility Check
+INFO:Place:834 - Only a subset of IOs are locked. Out of 54 IOs, 53 are locked
+   and 1 are not locked. If you would like to print the names of these IOs,
+   please set the environment variable XIL_PAR_DESIGN_CHECK_VERBOSE to 1. 
+Phase 2.7  Design Feasibility Check (Checksum:dbf17154) REAL time: 3 secs 
+
+Phase 3.31  Local Placement Optimization
+Phase 3.31  Local Placement Optimization (Checksum:dbf17154) REAL time: 3 secs 
+
+Phase 4.2  Initial Placement for Architecture Specific Features
+...
+Phase 4.2  Initial Placement for Architecture Specific Features
+(Checksum:180926f4) REAL time: 5 secs 
+
+Phase 5.36  Local Placement Optimization
+Phase 5.36  Local Placement Optimization (Checksum:180926f4) REAL time: 5 secs 
+
+Phase 6.30  Global Clock Region Assignment
+Phase 6.30  Global Clock Region Assignment (Checksum:180926f4) REAL time: 5 secs 
+
+Phase 7.3  Local Placement Optimization
+...
+Phase 7.3  Local Placement Optimization (Checksum:4f1f0f54) REAL time: 5 secs 
+
+Phase 8.5  Local Placement Optimization
+Phase 8.5  Local Placement Optimization (Checksum:4f1f0f54) REAL time: 5 secs 
+
+Phase 9.8  Global Placement
+...
+...
+Phase 9.8  Global Placement (Checksum:21357d1a) REAL time: 5 secs 
+
+Phase 10.5  Local Placement Optimization
+Phase 10.5  Local Placement Optimization (Checksum:21357d1a) REAL time: 5 secs 
+
+Phase 11.18  Placement Optimization
+Phase 11.18  Placement Optimization (Checksum:222999e2) REAL time: 5 secs 
+
+Phase 12.5  Local Placement Optimization
+Phase 12.5  Local Placement Optimization (Checksum:222999e2) REAL time: 5 secs 
+
+Phase 13.34  Placement Validation
+Phase 13.34  Placement Validation (Checksum:222999e2) REAL time: 5 secs 
+
+Total REAL time to Placer completion: 5 secs 
+Total CPU  time to Placer completion: 5 secs 
+Running post-placement packing...
+Writing output files...
+
+Design Summary:
+Number of errors:      0
+Number of warnings:    6
+Slice Logic Utilization:
+  Number of Slice Registers:                   108 out of  11,440    1%
+    Number used as Flip Flops:                 108
+    Number used as Latches:                      0
+    Number used as Latch-thrus:                  0
+    Number used as AND/OR logics:                0
+  Number of Slice LUTs:                        221 out of   5,720    3%
+    Number used as logic:                      219 out of   5,720    3%
+      Number using O6 output only:             108
+      Number using O5 output only:              90
+      Number using O5 and O6:                   21
+      Number used as ROM:                        0
+    Number used as Memory:                       0 out of   1,440    0%
+    Number used exclusively as route-thrus:      2
+      Number with same-slice register load:      0
+      Number with same-slice carry load:         2
+      Number with other load:                    0
+
+Slice Logic Distribution:
+  Number of occupied Slices:                    67 out of   1,430    4%
+  Number of MUXCYs used:                        96 out of   2,860    3%
+  Number of LUT Flip Flop pairs used:          225
+    Number with an unused Flip Flop:           131 out of     225   58%
+    Number with an unused LUT:                   4 out of     225    1%
+    Number of fully used LUT-FF pairs:          90 out of     225   40%
+    Number of unique control sets:               4
+    Number of slice register sites lost
+      to control set restrictions:              20 out of  11,440    1%
+
+  A LUT Flip Flop pair for this architecture represents one LUT paired with
+  one Flip Flop within a slice.  A control set is a unique combination of
+  clock, reset, set, and enable signals for a registered element.
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+
+IO Utilization:
+  Number of bonded IOBs:                        54 out of     102   52%
+    Number of LOCed IOBs:                       53 out of      54   98%
+
+Specific Feature Utilization:
+  Number of RAMB16BWERs:                         0 out of      32    0%
+  Number of RAMB8BWERs:                          0 out of      64    0%
+  Number of BUFIO2/BUFIO2_2CLKs:                 0 out of      32    0%
+  Number of BUFIO2FB/BUFIO2FB_2CLKs:             0 out of      32    0%
+  Number of BUFG/BUFGMUXs:                       1 out of      16    6%
+    Number used as BUFGs:                        1
+    Number used as BUFGMUX:                      0
+  Number of DCM/DCM_CLKGENs:                     0 out of       4    0%
+  Number of ILOGIC2/ISERDES2s:                   0 out of     200    0%
+  Number of IODELAY2/IODRP2/IODRP2_MCBs:         0 out of     200    0%
+  Number of OLOGIC2/OSERDES2s:                   0 out of     200    0%
+  Number of BSCANs:                              0 out of       4    0%
+  Number of BUFHs:                               0 out of     128    0%
+  Number of BUFPLLs:                             0 out of       8    0%
+  Number of BUFPLL_MCBs:                         0 out of       4    0%
+  Number of DSP48A1s:                            0 out of      16    0%
+  Number of ICAPs:                               0 out of       1    0%
+  Number of MCBs:                                0 out of       2    0%
+  Number of PCILOGICSEs:                         0 out of       2    0%
+  Number of PLL_ADVs:                            0 out of       2    0%
+  Number of PMVs:                                0 out of       1    0%
+  Number of STARTUPs:                            0 out of       1    0%
+  Number of SUSPEND_SYNCs:                       0 out of       1    0%
+
+Average Fanout of Non-Clock Nets:                2.15
+
+Peak Memory Usage:  4556 MB
+Total REAL time to MAP completion:  6 secs 
+Total CPU time to MAP completion (all processors):   6 secs 
+
+Mapping completed.
+See MAP report file "mojo_top_0.mrp" for details.
+
+*** Running par
+    with args -intstyle pa "mojo_top_0.ncd" -w "mojo_top_0_routed.ncd" -mt on
+
+
+
+
+Constraints file: mojo_top_0.pcf.
+Loading device for application Rf_Device from file '6slx9.nph' in environment D:\Programs\Xilinx\14.7\ISE_DS\ISE\.
+   "mojo_top_0" is an NCD, version 3.2, device xc6slx9, package tqg144, speed -2
+
+Initializing temperature to 85.000 Celsius. (default - Range: 0.000 to 85.000 Celsius)
+Initializing voltage to 1.140 Volts. (default - Range: 1.140 to 1.260 Volts)
+
+
+Device speed data version:  "PRODUCTION 1.23 2013-10-13".
+
+
+
+Device Utilization Summary:
+
+Slice Logic Utilization:
+  Number of Slice Registers:                   108 out of  11,440    1%
+    Number used as Flip Flops:                 108
+    Number used as Latches:                      0
+    Number used as Latch-thrus:                  0
+    Number used as AND/OR logics:                0
+  Number of Slice LUTs:                        221 out of   5,720    3%
+    Number used as logic:                      219 out of   5,720    3%
+      Number using O6 output only:             108
+      Number using O5 output only:              90
+      Number using O5 and O6:                   21
+      Number used as ROM:                        0
+    Number used as Memory:                       0 out of   1,440    0%
+    Number used exclusively as route-thrus:      2
+      Number with same-slice register load:      0
+      Number with same-slice carry load:         2
+      Number with other load:                    0
+
+Slice Logic Distribution:
+  Number of occupied Slices:                    67 out of   1,430    4%
+  Number of MUXCYs used:                        96 out of   2,860    3%
+  Number of LUT Flip Flop pairs used:          225
+    Number with an unused Flip Flop:           131 out of     225   58%
+    Number with an unused LUT:                   4 out of     225    1%
+    Number of fully used LUT-FF pairs:          90 out of     225   40%
+    Number of slice register sites lost
+      to control set restrictions:               0 out of  11,440    0%
+
+  A LUT Flip Flop pair for this architecture represents one LUT paired with
+  one Flip Flop within a slice.  A control set is a unique combination of
+  clock, reset, set, and enable signals for a registered element.
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+
+IO Utilization:
+  Number of bonded IOBs:                        54 out of     102   52%
+    Number of LOCed IOBs:                       53 out of      54   98%
+
+Specific Feature Utilization:
+  Number of RAMB16BWERs:                         0 out of      32    0%
+  Number of RAMB8BWERs:                          0 out of      64    0%
+  Number of BUFIO2/BUFIO2_2CLKs:                 0 out of      32    0%
+  Number of BUFIO2FB/BUFIO2FB_2CLKs:             0 out of      32    0%
+  Number of BUFG/BUFGMUXs:                       1 out of      16    6%
+    Number used as BUFGs:                        1
+    Number used as BUFGMUX:                      0
+  Number of DCM/DCM_CLKGENs:                     0 out of       4    0%
+  Number of ILOGIC2/ISERDES2s:                   0 out of     200    0%
+  Number of IODELAY2/IODRP2/IODRP2_MCBs:         0 out of     200    0%
+  Number of OLOGIC2/OSERDES2s:                   0 out of     200    0%
+  Number of BSCANs:                              0 out of       4    0%
+  Number of BUFHs:                               0 out of     128    0%
+  Number of BUFPLLs:                             0 out of       8    0%
+  Number of BUFPLL_MCBs:                         0 out of       4    0%
+  Number of DSP48A1s:                            0 out of      16    0%
+  Number of ICAPs:                               0 out of       1    0%
+  Number of MCBs:                                0 out of       2    0%
+  Number of PCILOGICSEs:                         0 out of       2    0%
+  Number of PLL_ADVs:                            0 out of       2    0%
+  Number of PMVs:                                0 out of       1    0%
+  Number of STARTUPs:                            0 out of       1    0%
+  Number of SUSPEND_SYNCs:                       0 out of       1    0%
+
+
+Overall effort level (-ol):   Standard 
+Router effort level (-rl):    High 
+
+PAR will use up to 2 processors
+WARNING:Par:288 - The signal io_button(0)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_button(2)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_button(3)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_button(4)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_led(2)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_led(3)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_led(4)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_led(5)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_led(6)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_led(7)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_led(8)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_led(9)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_led(10)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_led(11)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_led(12)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_led(20)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_led(13)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_led(21)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_led(14)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_led(22)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_led(15)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_led(23)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_led(16)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_led(17)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_led(18)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_led(19)_IBUF has no load.  PAR will not attempt to route this signal.
+Starting Multi-threaded Router
+
+
+Phase  1  : 729 unrouted;      REAL time: 3 secs 
+
+Phase  2  : 589 unrouted;      REAL time: 3 secs 
+
+Phase  3  : 173 unrouted;      REAL time: 3 secs 
+
+Phase  4  : 173 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 3 secs 
+
+Updating file: mojo_top_0_routed.ncd with current fully routed design.
+
+Phase  5  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 3 secs 
+
+Phase  6  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 3 secs 
+
+Phase  7  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 3 secs 
+
+Phase  8  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 3 secs 
+
+Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 3 secs 
+
+Phase 10  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 3 secs 
+Total REAL time to Router completion: 3 secs 
+Total CPU time to Router completion (all processors): 3 secs 
+
+Generating "PAR" statistics.
+
+**************************
+Generating Clock Report
+**************************
+
++---------------------+--------------+------+------+------------+-------------+
+|        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
++---------------------+--------------+------+------+------------+-------------+
+|           clk_BUFGP | BUFGMUX_X2Y11| No   |   27 |  0.096     |  1.493      |
++---------------------+--------------+------+------+------------+-------------+
+
+* Net Skew is the difference between the minimum and maximum routing
+only delays for the net. Note this is different from Clock Skew which
+is reported in TRCE timing report. Clock Skew is the difference between
+the minimum and maximum path delays which includes logic delays.
+
+* The fanout is the number of component pins not the individual BEL loads,
+for example SLICE loads not FF loads.
+
+Timing Score: 0 (Setup: 0, Hold: 0, Component Switching Limit: 0)
+
+Asterisk (*) preceding a constraint indicates it was not met.
+   This may be due to a setup or hold violation.
+
+----------------------------------------------------------------------------------------------------------
+  Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
+                                            |             |    Slack   | Achievable | Errors |    Score   
+----------------------------------------------------------------------------------------------------------
+  TS_clk = PERIOD TIMEGRP "clk" 50 MHz HIGH | SETUP       |    14.347ns|     5.653ns|       0|           0
+   50%                                      | HOLD        |     0.401ns|            |       0|           0
+----------------------------------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Generating Pad Report.
+
+All signals are completely routed.
+
+WARNING:Par:283 - There are 26 loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
+
+Total REAL time to PAR completion: 4 secs 
+Total CPU time to PAR completion (all processors): 4 secs 
+
+Peak Memory Usage:  4514 MB
+
+Placer: Placement generated during map.
+Routing: Completed - No errors found.
+Timing: Completed - No errors found.
+
+Number of error messages: 0
+Number of warning messages: 28
+Number of info messages: 0
+
+Writing design to file mojo_top_0_routed.ncd
+
+
+
+PAR done!
+
+*** Running trce
+    with args -intstyle ise -o "mojo_top_0.twr" -v 30 -l 30 "mojo_top_0_routed.ncd" "mojo_top_0.pcf"
+
+Loading device for application Rf_Device from file '6slx9.nph' in environment
+D:\Programs\Xilinx\14.7\ISE_DS\ISE\.
+   "mojo_top_0" is an NCD, version 3.2, device xc6slx9, package tqg144, speed -2
+
+Analysis completed Sat Oct 12 00:37:50 2019
+--------------------------------------------------------------------------------
+
+Generating Report ...
+
+Number of warnings: 0
+Total time: 2 secs 
+
+*** Running xdl
+    with args -secure -ncd2xdl -nopips "mojo_top_0_routed.ncd" "mojo_top_0_routed.xdl"
+
+Release 14.7 - xdl P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+WARNING:XDL:213 - The resulting xdl output will not have LUT equation strings or RAM INIT strings.
+Loading device for application Rf_Device from file '6slx9.nph' in environment D:\Programs\Xilinx\14.7\ISE_DS\ISE\.
+   "mojo_top_0" is an NCD, version 3.2, device xc6slx9, package tqg144, speed -2
+Successfully converted design 'mojo_top_0_routed.ncd' to 'mojo_top_0_routed.xdl'.
+[Sat Oct 12 00:37:58 2019] impl_1 finished
+wait_on_run: Time (s): elapsed = 00:00:30 . Memory (MB): peak = 296.715 ; gain = 0.000
+# launch_runs impl_1 -to_step Bitgen
+[Sat Oct 12 00:37:58 2019] Launched impl_1...
+Run output will be captured here: D:/Alchitry/Full-Bit Adder MHP/work/planAhead/MHP/MHP.runs/impl_1/runme.log
+# wait_on_run impl_1
+[Sat Oct 12 00:37:58 2019] Waiting for impl_1 to finish...
+
+*** Running ngdbuild
+    with args -intstyle ise -p xc6slx9tqg144-2 -dd _ngo -uc "mojo_top_0.ucf" "mojo_top_0.edf"
+
+
+Command Line: D:\Programs\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe
+-intstyle ise -p xc6slx9tqg144-2 -dd _ngo -uc mojo_top_0.ucf mojo_top_0.edf
+
+Executing edif2ngd -quiet "mojo_top_0.edf" "_ngo\mojo_top_0.ngo"
+Release 14.7 - edif2ngd P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading NGO file "D:/Alchitry/Full-Bit Adder
+MHP/work/planAhead/MHP/MHP.runs/impl_1/_ngo/mojo_top_0.ngo" ...
+Gathering constraint information from source properties...
+Done.
+
+Annotating constraints to design from ucf file "mojo_top_0.ucf" ...
+Resolving constraint associations...
+Checking Constraint Associations...
+Done...
+
+Checking expanded design ...
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   0
+
+Writing NGD file "mojo_top_0.ngd" ...
+Total REAL time to NGDBUILD completion:  5 sec
+Total CPU time to NGDBUILD completion:   2 sec
+
+Writing NGDBUILD log file "mojo_top_0.bld"...
+
+NGDBUILD done.
+
+*** Running map
+    with args -intstyle pa -w -pr b -mt on "mojo_top_0.ngd"
+
+Using target part "6slx9tqg144-2".
+INFO:Map:284 - Map is running with the multi-threading option on. Map currently
+   supports the use of up to 2 processors. Based on the the user options and
+   machine load, Map will use 2 processors during this run.
+Mapping design into LUTs...
+WARNING:MapLib:701 - Signal spi_channel[3] connected to top level port
+   spi_channel(3) has been removed.
+WARNING:MapLib:701 - Signal spi_channel[2] connected to top level port
+   spi_channel(2) has been removed.
+WARNING:MapLib:701 - Signal spi_channel[1] connected to top level port
+   spi_channel(1) has been removed.
+WARNING:MapLib:701 - Signal spi_channel[0] connected to top level port
+   spi_channel(0) has been removed.
+WARNING:MapLib:701 - Signal spi_miso connected to top level port spi_miso has
+   been removed.
+WARNING:MapLib:701 - Signal avr_rx connected to top level port avr_rx has been
+   removed.
+Running directed packing...
+Running delay-based LUT packing...
+Updating timing models...
+INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
+   (.mrp).
+Running timing-driven placement...
+Total REAL time at the beginning of Placer: 3 secs 
+Total CPU  time at the beginning of Placer: 3 secs 
+
+Phase 1.1  Initial Placement Analysis
+Phase 1.1  Initial Placement Analysis (Checksum:dbf17154) REAL time: 3 secs 
+
+Phase 2.7  Design Feasibility Check
+INFO:Place:834 - Only a subset of IOs are locked. Out of 54 IOs, 53 are locked
+   and 1 are not locked. If you would like to print the names of these IOs,
+   please set the environment variable XIL_PAR_DESIGN_CHECK_VERBOSE to 1. 
+Phase 2.7  Design Feasibility Check (Checksum:dbf17154) REAL time: 3 secs 
+
+Phase 3.31  Local Placement Optimization
+Phase 3.31  Local Placement Optimization (Checksum:dbf17154) REAL time: 3 secs 
+
+Phase 4.2  Initial Placement for Architecture Specific Features
+...
+Phase 4.2  Initial Placement for Architecture Specific Features
+(Checksum:180926f4) REAL time: 5 secs 
+
+Phase 5.36  Local Placement Optimization
+Phase 5.36  Local Placement Optimization (Checksum:180926f4) REAL time: 5 secs 
+
+Phase 6.30  Global Clock Region Assignment
+Phase 6.30  Global Clock Region Assignment (Checksum:180926f4) REAL time: 5 secs 
+
+Phase 7.3  Local Placement Optimization
+...
+Phase 7.3  Local Placement Optimization (Checksum:4f1f0f54) REAL time: 5 secs 
+
+Phase 8.5  Local Placement Optimization
+Phase 8.5  Local Placement Optimization (Checksum:4f1f0f54) REAL time: 5 secs 
+
+Phase 9.8  Global Placement
+...
+...
+Phase 9.8  Global Placement (Checksum:21357d1a) REAL time: 5 secs 
+
+Phase 10.5  Local Placement Optimization
+Phase 10.5  Local Placement Optimization (Checksum:21357d1a) REAL time: 5 secs 
+
+Phase 11.18  Placement Optimization
+Phase 11.18  Placement Optimization (Checksum:222999e2) REAL time: 5 secs 
+
+Phase 12.5  Local Placement Optimization
+Phase 12.5  Local Placement Optimization (Checksum:222999e2) REAL time: 5 secs 
+
+Phase 13.34  Placement Validation
+Phase 13.34  Placement Validation (Checksum:222999e2) REAL time: 5 secs 
+
+Total REAL time to Placer completion: 5 secs 
+Total CPU  time to Placer completion: 5 secs 
+Running post-placement packing...
+Writing output files...
+
+Design Summary:
+Number of errors:      0
+Number of warnings:    6
+Slice Logic Utilization:
+  Number of Slice Registers:                   108 out of  11,440    1%
+    Number used as Flip Flops:                 108
+    Number used as Latches:                      0
+    Number used as Latch-thrus:                  0
+    Number used as AND/OR logics:                0
+  Number of Slice LUTs:                        221 out of   5,720    3%
+    Number used as logic:                      219 out of   5,720    3%
+      Number using O6 output only:             108
+      Number using O5 output only:              90
+      Number using O5 and O6:                   21
+      Number used as ROM:                        0
+    Number used as Memory:                       0 out of   1,440    0%
+    Number used exclusively as route-thrus:      2
+      Number with same-slice register load:      0
+      Number with same-slice carry load:         2
+      Number with other load:                    0
+
+Slice Logic Distribution:
+  Number of occupied Slices:                    67 out of   1,430    4%
+  Number of MUXCYs used:                        96 out of   2,860    3%
+  Number of LUT Flip Flop pairs used:          225
+    Number with an unused Flip Flop:           131 out of     225   58%
+    Number with an unused LUT:                   4 out of     225    1%
+    Number of fully used LUT-FF pairs:          90 out of     225   40%
+    Number of unique control sets:               4
+    Number of slice register sites lost
+      to control set restrictions:              20 out of  11,440    1%
+
+  A LUT Flip Flop pair for this architecture represents one LUT paired with
+  one Flip Flop within a slice.  A control set is a unique combination of
+  clock, reset, set, and enable signals for a registered element.
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+
+IO Utilization:
+  Number of bonded IOBs:                        54 out of     102   52%
+    Number of LOCed IOBs:                       53 out of      54   98%
+
+Specific Feature Utilization:
+  Number of RAMB16BWERs:                         0 out of      32    0%
+  Number of RAMB8BWERs:                          0 out of      64    0%
+  Number of BUFIO2/BUFIO2_2CLKs:                 0 out of      32    0%
+  Number of BUFIO2FB/BUFIO2FB_2CLKs:             0 out of      32    0%
+  Number of BUFG/BUFGMUXs:                       1 out of      16    6%
+    Number used as BUFGs:                        1
+    Number used as BUFGMUX:                      0
+  Number of DCM/DCM_CLKGENs:                     0 out of       4    0%
+  Number of ILOGIC2/ISERDES2s:                   0 out of     200    0%
+  Number of IODELAY2/IODRP2/IODRP2_MCBs:         0 out of     200    0%
+  Number of OLOGIC2/OSERDES2s:                   0 out of     200    0%
+  Number of BSCANs:                              0 out of       4    0%
+  Number of BUFHs:                               0 out of     128    0%
+  Number of BUFPLLs:                             0 out of       8    0%
+  Number of BUFPLL_MCBs:                         0 out of       4    0%
+  Number of DSP48A1s:                            0 out of      16    0%
+  Number of ICAPs:                               0 out of       1    0%
+  Number of MCBs:                                0 out of       2    0%
+  Number of PCILOGICSEs:                         0 out of       2    0%
+  Number of PLL_ADVs:                            0 out of       2    0%
+  Number of PMVs:                                0 out of       1    0%
+  Number of STARTUPs:                            0 out of       1    0%
+  Number of SUSPEND_SYNCs:                       0 out of       1    0%
+
+Average Fanout of Non-Clock Nets:                2.15
+
+Peak Memory Usage:  4556 MB
+Total REAL time to MAP completion:  6 secs 
+Total CPU time to MAP completion (all processors):   6 secs 
+
+Mapping completed.
+See MAP report file "mojo_top_0.mrp" for details.
+
+*** Running par
+    with args -intstyle pa "mojo_top_0.ncd" -w "mojo_top_0_routed.ncd" -mt on
+
+
+
+
+Constraints file: mojo_top_0.pcf.
+Loading device for application Rf_Device from file '6slx9.nph' in environment D:\Programs\Xilinx\14.7\ISE_DS\ISE\.
+   "mojo_top_0" is an NCD, version 3.2, device xc6slx9, package tqg144, speed -2
+
+Initializing temperature to 85.000 Celsius. (default - Range: 0.000 to 85.000 Celsius)
+Initializing voltage to 1.140 Volts. (default - Range: 1.140 to 1.260 Volts)
+
+
+Device speed data version:  "PRODUCTION 1.23 2013-10-13".
+
+
+
+Device Utilization Summary:
+
+Slice Logic Utilization:
+  Number of Slice Registers:                   108 out of  11,440    1%
+    Number used as Flip Flops:                 108
+    Number used as Latches:                      0
+    Number used as Latch-thrus:                  0
+    Number used as AND/OR logics:                0
+  Number of Slice LUTs:                        221 out of   5,720    3%
+    Number used as logic:                      219 out of   5,720    3%
+      Number using O6 output only:             108
+      Number using O5 output only:              90
+      Number using O5 and O6:                   21
+      Number used as ROM:                        0
+    Number used as Memory:                       0 out of   1,440    0%
+    Number used exclusively as route-thrus:      2
+      Number with same-slice register load:      0
+      Number with same-slice carry load:         2
+      Number with other load:                    0
+
+Slice Logic Distribution:
+  Number of occupied Slices:                    67 out of   1,430    4%
+  Number of MUXCYs used:                        96 out of   2,860    3%
+  Number of LUT Flip Flop pairs used:          225
+    Number with an unused Flip Flop:           131 out of     225   58%
+    Number with an unused LUT:                   4 out of     225    1%
+    Number of fully used LUT-FF pairs:          90 out of     225   40%
+    Number of slice register sites lost
+      to control set restrictions:               0 out of  11,440    0%
+
+  A LUT Flip Flop pair for this architecture represents one LUT paired with
+  one Flip Flop within a slice.  A control set is a unique combination of
+  clock, reset, set, and enable signals for a registered element.
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+
+IO Utilization:
+  Number of bonded IOBs:                        54 out of     102   52%
+    Number of LOCed IOBs:                       53 out of      54   98%
+
+Specific Feature Utilization:
+  Number of RAMB16BWERs:                         0 out of      32    0%
+  Number of RAMB8BWERs:                          0 out of      64    0%
+  Number of BUFIO2/BUFIO2_2CLKs:                 0 out of      32    0%
+  Number of BUFIO2FB/BUFIO2FB_2CLKs:             0 out of      32    0%
+  Number of BUFG/BUFGMUXs:                       1 out of      16    6%
+    Number used as BUFGs:                        1
+    Number used as BUFGMUX:                      0
+  Number of DCM/DCM_CLKGENs:                     0 out of       4    0%
+  Number of ILOGIC2/ISERDES2s:                   0 out of     200    0%
+  Number of IODELAY2/IODRP2/IODRP2_MCBs:         0 out of     200    0%
+  Number of OLOGIC2/OSERDES2s:                   0 out of     200    0%
+  Number of BSCANs:                              0 out of       4    0%
+  Number of BUFHs:                               0 out of     128    0%
+  Number of BUFPLLs:                             0 out of       8    0%
+  Number of BUFPLL_MCBs:                         0 out of       4    0%
+  Number of DSP48A1s:                            0 out of      16    0%
+  Number of ICAPs:                               0 out of       1    0%
+  Number of MCBs:                                0 out of       2    0%
+  Number of PCILOGICSEs:                         0 out of       2    0%
+  Number of PLL_ADVs:                            0 out of       2    0%
+  Number of PMVs:                                0 out of       1    0%
+  Number of STARTUPs:                            0 out of       1    0%
+  Number of SUSPEND_SYNCs:                       0 out of       1    0%
+
+
+Overall effort level (-ol):   Standard 
+Router effort level (-rl):    High 
+
+PAR will use up to 2 processors
+WARNING:Par:288 - The signal io_button(0)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_button(2)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_button(3)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_button(4)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_led(2)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_led(3)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_led(4)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_led(5)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_led(6)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_led(7)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_led(8)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_led(9)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_led(10)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_led(11)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_led(12)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_led(20)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_led(13)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_led(21)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_led(14)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_led(22)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_led(15)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_led(23)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_led(16)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_led(17)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_led(18)_IBUF has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal io_led(19)_IBUF has no load.  PAR will not attempt to route this signal.
+Starting Multi-threaded Router
+
+
+Phase  1  : 729 unrouted;      REAL time: 3 secs 
+
+Phase  2  : 589 unrouted;      REAL time: 3 secs 
+
+Phase  3  : 173 unrouted;      REAL time: 3 secs 
+
+Phase  4  : 173 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 3 secs 
+
+Updating file: mojo_top_0_routed.ncd with current fully routed design.
+
+Phase  5  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 3 secs 
+
+Phase  6  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 3 secs 
+
+Phase  7  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 3 secs 
+
+Phase  8  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 3 secs 
+
+Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 3 secs 
+
+Phase 10  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 3 secs 
+Total REAL time to Router completion: 3 secs 
+Total CPU time to Router completion (all processors): 3 secs 
+
+Generating "PAR" statistics.
+
+**************************
+Generating Clock Report
+**************************
+
++---------------------+--------------+------+------+------------+-------------+
+|        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
++---------------------+--------------+------+------+------------+-------------+
+|           clk_BUFGP | BUFGMUX_X2Y11| No   |   27 |  0.096     |  1.493      |
++---------------------+--------------+------+------+------------+-------------+
+
+* Net Skew is the difference between the minimum and maximum routing
+only delays for the net. Note this is different from Clock Skew which
+is reported in TRCE timing report. Clock Skew is the difference between
+the minimum and maximum path delays which includes logic delays.
+
+* The fanout is the number of component pins not the individual BEL loads,
+for example SLICE loads not FF loads.
+
+Timing Score: 0 (Setup: 0, Hold: 0, Component Switching Limit: 0)
+
+Asterisk (*) preceding a constraint indicates it was not met.
+   This may be due to a setup or hold violation.
+
+----------------------------------------------------------------------------------------------------------
+  Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
+                                            |             |    Slack   | Achievable | Errors |    Score   
+----------------------------------------------------------------------------------------------------------
+  TS_clk = PERIOD TIMEGRP "clk" 50 MHz HIGH | SETUP       |    14.347ns|     5.653ns|       0|           0
+   50%                                      | HOLD        |     0.401ns|            |       0|           0
+----------------------------------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Generating Pad Report.
+
+All signals are completely routed.
+
+WARNING:Par:283 - There are 26 loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
+
+Total REAL time to PAR completion: 4 secs 
+Total CPU time to PAR completion (all processors): 4 secs 
+
+Peak Memory Usage:  4514 MB
+
+Placer: Placement generated during map.
+Routing: Completed - No errors found.
+Timing: Completed - No errors found.
+
+Number of error messages: 0
+Number of warning messages: 28
+Number of info messages: 0
+
+Writing design to file mojo_top_0_routed.ncd
+
+
+
+PAR done!
+
+*** Running trce
+    with args -intstyle ise -o "mojo_top_0.twr" -v 30 -l 30 "mojo_top_0_routed.ncd" "mojo_top_0.pcf"
+
+Loading device for application Rf_Device from file '6slx9.nph' in environment
+D:\Programs\Xilinx\14.7\ISE_DS\ISE\.
+   "mojo_top_0" is an NCD, version 3.2, device xc6slx9, package tqg144, speed -2
+
+Analysis completed Sat Oct 12 00:37:50 2019
+--------------------------------------------------------------------------------
+
+Generating Report ...
+
+Number of warnings: 0
+Total time: 2 secs 
+
+*** Running xdl
+    with args -secure -ncd2xdl -nopips "mojo_top_0_routed.ncd" "mojo_top_0_routed.xdl"
+
+Release 14.7 - xdl P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+WARNING:XDL:213 - The resulting xdl output will not have LUT equation strings or RAM INIT strings.
+Loading device for application Rf_Device from file '6slx9.nph' in environment D:\Programs\Xilinx\14.7\ISE_DS\ISE\.
+   "mojo_top_0" is an NCD, version 3.2, device xc6slx9, package tqg144, speed -2
+Successfully converted design 'mojo_top_0_routed.ncd' to 'mojo_top_0_routed.xdl'.
+
+*** Running bitgen
+    with args "mojo_top_0_routed.ncd" "mojo_top_0.bit" "mojo_top_0.pcf" -g Binary:Yes -g Compress -w -intstyle pa
+
+[Sat Oct 12 00:38:13 2019] impl_1 finished
+wait_on_run: Time (s): elapsed = 00:00:15 . Memory (MB): peak = 296.715 ; gain = 0.000
+INFO: [Common 17-206] Exiting PlanAhead at Sat Oct 12 00:38:13 2019...
+INFO: [Common 17-83] Releasing license: PlanAhead
+
+Finished building project.
